@@ -16,7 +16,7 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 import { cartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-
+import { ProductsModel } from './model/products.model';
 
 
 
@@ -48,7 +48,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     RouterModule,
     
   ],
-  providers: [],
+  providers: [ProductsModel],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
