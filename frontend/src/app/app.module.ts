@@ -11,6 +11,15 @@ import {LoginComponent} from './login/login.component';
 import { AddressComponent } from './address/address.component';
 import { OrdersComponent } from './orders/orders.component';
 import { ProfileDetailsComponent } from './profile-details/profile-details.component';
+import { ShopComponent } from './shop/shop.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
+import { cartComponent } from './cart/cart.component';
+import { CheckoutComponent } from './chechout/checkout.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+
+
+
+
 
 
 
@@ -23,6 +32,11 @@ import { ProfileDetailsComponent } from './profile-details/profile-details.compo
     AddressComponent,
     OrdersComponent,
     ProfileDetailsComponent,
+    ShopComponent,
+    ProductDetailsComponent,
+    cartComponent,
+    CheckoutComponent,
+    DashboardComponent
     
     
   ],
