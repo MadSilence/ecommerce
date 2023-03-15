@@ -10,7 +10,7 @@ import {ForgotPasswordComponent} from './forgot-password/forgot-password.compone
 import { ShopComponent } from './shop/shop.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { cartComponent } from './cart/cart.component';
-import { CheckoutComponent } from './chechout/checkout.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
 const routes: Routes = [
