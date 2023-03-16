@@ -7,17 +7,19 @@
               <h2 class="mb-2">Login</h2>
               <p class="lead">Don’t have an account? <a href="#">Create a free account</a></p>
             </div>
-            <form action="#"> 
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()"> 
               <div class="form-group mb-4">
-                <label for="#">Enter username</label>
-                <input type="text" class="form-control" placeholder="Enter Username">
+                <label for="email">Enter email</label>
+                <input id="email" type="text" formControlName="email" class="form-control" placeholder="Enter email">
               </div>
               <div class="form-group">
-                <label for="#">Enter Password</label>
-                
-                <input type="text" class="form-control" placeholder="Enter Password"> 
+                <label for="password">Enter Password</label>
+                <input id="password" type="text" formControlName="password" class="form-control" placeholder="Enter Password"> 
               </div>
-              <a href="#" class="btn btn-main mt-3 btn-block" style="margin-right:15px">Login</a>
+              <!-- <a href="#" class="btn btn-main mt-3 btn-block" style="margin-right:15px">Login</a> -->
+              <button type="submit" [disabled]="!loginForm.valid || isSubmitting" class="btn btn-main mt-3 btn-block" style="margin-right:15px; background-color: #F67952;">
+                {{ isSubmitting ? 'Submitting...' : 'Submit' }}
+              </button>
               <a class="float-right" href="">Forget password?</a>
               
             </form>
