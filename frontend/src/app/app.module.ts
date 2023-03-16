@@ -17,6 +17,8 @@ import { cartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProductsModel } from './model/products.model';
+import {ForgotPasswordComponent} from './forgot-password/forgot-password.component';
+
 
 
 
@@ -36,7 +38,8 @@ import { ProductsModel } from './model/products.model';
     ProductDetailsComponent,
     cartComponent,
     CheckoutComponent,
-    DashboardComponent
+    DashboardComponent,
+    ForgotPasswordComponent
     
     
   ],
