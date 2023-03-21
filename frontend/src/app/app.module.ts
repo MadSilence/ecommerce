@@ -1,15 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import {FormsModule} from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
-import {RouterModule} from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {HeaderComponent} from './header/header.component';
-import {FooterComponent} from './footer/footer.component';
-import {LoginComponent} from './login/login.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { LoginComponent} from './login/login.component';
 import { AddressComponent } from './address/address.component';
 import { OrdersComponent } from './orders/orders.component';
 import { ProfileDetailsComponent } from './profile-details/profile-details.component';
@@ -19,7 +18,9 @@ import { cartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProductsModel } from './model/products.model';
-import {ForgotPasswordComponent} from './forgot-password/forgot-password.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { SignupComponent } from './signup/signup.component';
+import { LoginGuard } from './components/auth/login.guard.';
 
 
 
@@ -41,20 +42,21 @@ import {ForgotPasswordComponent} from './forgot-password/forgot-password.compone
     cartComponent,
     CheckoutComponent,
     DashboardComponent,
-    ForgotPasswordComponent
-    
-    
+    ForgotPasswordComponent,
+    SignupComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
     SlickCarouselModule,
     RouterModule,
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [ProductsModel],
+  providers: [
+    ProductsModel,
+    LoginGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
