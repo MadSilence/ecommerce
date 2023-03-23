@@ -13,13 +13,18 @@ export class cartComponent implements OnInit {
   
   public checkout() {
     let ordersBefore = localStorage.getItem("orders")
-    let orderId = Math.floor(Math.random() * 101);
+
+    const newOrder: {} = {
+      id: Math.floor(Math.random() * 101),
+      date: Date(),
+      status: true
+    }
     
     if(ordersBefore) {
-        localStorage.setItem("orders", ordersBefore + `;` + orderId + "," + Date() + "," + "true,1")
+        localStorage.setItem("orders", ordersBefore + ',' + JSON.stringify(newOrder))
         sessionStorage.removeItem("cart")
     } else {
-      localStorage.setItem("orders", orderId + "," + Date() + "," + "true,1")
+      localStorage.setItem("orders", JSON.stringify(newOrder))
       sessionStorage.removeItem("cart")
     }
   }

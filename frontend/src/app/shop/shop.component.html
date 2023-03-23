@@ -54,7 +54,7 @@
                   <a routerLink="/product-single"><img class="img-fluid w-100 mb-3 img-first" src={{product.image}} alt="product-img" /></a>
                 </div>
                 <div class="product-hover-overlay">
-                  <a (click)="addToCart($event)" id={{product.id}}><i class="tf-ion-android-cart"></i></a>
+                  <a (click)="addToCart($event)" id={{product.id}}><i class="tf-ion-android-cart" id={{product.id}}></i></a>
                   <a><i class="tf-ion-ios-heart"></i></a>
                 </div>
                 <div class="product-info">
