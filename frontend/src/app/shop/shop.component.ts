@@ -1,6 +1,5 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import {CommonService} from '../service/common.service'
 
 @Component({
   selector: 'app-shop',
@@ -9,7 +8,15 @@ import { Observable } from 'rxjs';
 })
 export class ShopComponent implements OnInit {
   public products: any[] = [];
-  constructor(private http: HttpClient) { }
+  constructor(private common:CommonService) { }
+
+  
+  ngOnInit(): void {
+    this.common.getProducts().subscribe((res:any )=> {
+      this.products = res;
+      console.log('data response', this.products);
+    });
+}
 
   addToCart(event: any) {
     let productsBefore = sessionStorage.getItem("cart")
@@ -21,27 +28,5 @@ export class ShopComponent implements OnInit {
   }
   
   
-  login(): Observable<void> {
-    const url = 'http://ecommerce-env.eba-2erxjxp5.eu-north-1.elasticbeanstalk.com/product';
-    
-    this.http.get<any>(url, {headers: {'Content-Type': 'application/json', 'Authorization': `Bearer ${localStorage.getItem("token")}`}}).subscribe(data => {
-      if(!data) {
-        
-      } else {
-        this.products = data;
-        console.log(this.products);
-      }
-    });
 
-    return new Observable((observer) => {
-      setTimeout(() => {
-        observer.next();
-        observer.complete();
-      }, 0);
-    });
-  }
-
-  ngOnInit(): void {
-      this.login();
-  }
 }
