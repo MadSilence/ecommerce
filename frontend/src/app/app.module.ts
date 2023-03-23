@@ -21,7 +21,7 @@ import { ProductsModel } from './model/products.model';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { SignupComponent } from './signup/signup.component';
 import { LoginGuard } from './components/auth/login.guard.';
-
+import { FormsModule} from '@angular/forms'
 
 
 
@@ -51,7 +51,8 @@ import { LoginGuard } from './components/auth/login.guard.';
     SlickCarouselModule,
     RouterModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
     ProductsModel,

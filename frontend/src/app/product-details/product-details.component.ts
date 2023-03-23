@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {CommonService} from '../service/common.service';
 
 @Component({
   selector: 'app-product-details',
@@ -6,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
   
 })
 export class ProductDetailsComponent implements OnInit {
-  constructor() { }
-  
+  constructor(private common:CommonService) { }
+  cartValue:any;
  
   ngOnInit(): void {
   }
-}
+
+  addToCart(value:any){
+    console.log("value",value);
+    if (value !== 0) {
+      this.common.sendTotal(value);
+    }
+    }
+} 
